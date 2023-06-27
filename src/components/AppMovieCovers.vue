@@ -8,9 +8,9 @@
 
 <template>
     
-    <div class="cards">
-        <h1>{{ MyMovies.title }}</h1>
-        <p>{{ MyMovies.original_title }}</p>
+    <div class="cards custom-card">
+        <h1>{{ MyMovies.name }} {{ MyMovies.title }}</h1>
+        <p>{{ MyMovies.original_name }} {{ MyMovies.original_title }}</p>
         <div><img class="flag" :src="'../../node_modules/country-flag-icons/flags/1x1/' + MyMovies.original_language.toUpperCase() + '.svg'" alt="IMMAGINE NON TROVATA"></div>
         <span>{{ MyMovies.overview }}</span>
         <p>{{ MyMovies.vote_average }}</p>
@@ -23,6 +23,7 @@
 
 .flag{
     width: 30px;
+    height: 30px;
 }
-    
+
 </style>

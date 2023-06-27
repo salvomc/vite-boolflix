@@ -18,7 +18,7 @@
   <div class="container">
     <div class="row">
         <div class="col">
-            <ul class="d-flex">
+            <ul class="d-flex flex-wrap">
                 <li class="col-lg-3 col-d-4 col-12 card" v-for="(movie, index) in store.movieCatalogue" :key="index"><AppMovieCovers :MyMovies="movie" /></li>
             </ul>
         </div>

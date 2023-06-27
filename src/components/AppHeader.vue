@@ -15,7 +15,7 @@ import { store } from '../store';
  
  <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-12">
             <h1>Boolflix</h1>
             <div>
                 <input type="text" placeholder="search" v-model="store.searchMovies" @keyup.enter="$emit('search')" >
