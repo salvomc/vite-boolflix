@@ -21,12 +21,9 @@
         if(store.movieCatalogue !== '')
         {
           let filteredUrl = store.apiUrl + store.search_name + store.searchMovies
-          console.log(filteredUrl)
-          store.newUrl = filteredUrl
           axios.get(filteredUrl).then((response)=> 
           {
             store.movieCatalogue = response.data.results
-            console.log(store.movieCatalogue)
           })  
         }
       },
