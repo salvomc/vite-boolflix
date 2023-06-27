@@ -5,4 +5,5 @@ export const store = reactive({
     movieCatalogue: [],
     searchMovies: '',
     search_name: '&query=',
+    background_img_path: 'https://image.tmdb.org/t/p/w342',
 })
