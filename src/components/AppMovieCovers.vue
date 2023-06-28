@@ -28,12 +28,14 @@ import { store } from '../store';
 <template>
     
     <div class="custom-card" :style="{'background-image':`url(${store.background_img_path}${MyMovies.poster_path})`}">
-        <h1>{{ MyMovies.name }} {{ MyMovies.title }}</h1>
-        <p>{{ MyMovies.original_name }} {{ MyMovies.original_title }}</p>
-        <div><img class="flag" :src="'../../node_modules/country-flag-icons/flags/1x1/' + MyMovies.original_language.toUpperCase() + '.svg'" alt="IMMAGINE NON TROVATA"></div>
-        <p>{{ MyMovies.overview }}</p>
-        <span v-for="rating in obtainRating()" :key="rating"><i class="fa-solid fa-star" style="color: goldenrod;"></i></span>
-        <span v-for="empty_stars in obtainEmptyStars()" :key="empty_stars"><i class="fa-regular fa-star" style="color: goldenrod;"></i></span>
+        <div class="hover-background">
+            <h1>{{ MyMovies.name }} {{ MyMovies.title }}</h1>
+            <p>{{ MyMovies.original_name }} {{ MyMovies.original_title }}</p>
+            <div><img class="flag" :src="'../../node_modules/country-flag-icons/flags/1x1/' + MyMovies.original_language.toUpperCase() + '.svg'" alt="IMMAGINE NON TROVATA"></div>
+            <p>{{ MyMovies.overview }}</p>
+            <span v-for="rating in obtainRating()" :key="rating"><i class="fa-solid fa-star" style="color: #FFAB00;"></i></span>
+            <span v-for="empty_stars in obtainEmptyStars()" :key="empty_stars"><i class="fa-solid fa-star" style="color: white;"></i></span>
+        </div>
     </div>
 
 </template>
@@ -44,17 +46,53 @@ import { store } from '../store';
 .flag{
     width: 30px;
     height: 30px;
+    display: none;
 }
 
 .custom-card{
-    width: 100%;
-    height: 500px;
-    font-weight: bold;
-    text-align: center;
+    height: 510px;
+    width: 320px;
+    text-align: start;
+    cursor: pointer;
     overflow-y: auto;
+    color: white;
+    background-color: rgb(38, 38, 38);
     background-repeat: no-repeat;
-    color: black;
+    background-position: bottom;
 }
+.hover-background{
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0px 5px 0px 5px;
+}
+
+h1{
+    font-size: 20px;
+    display: none;
+}
+
+p{
+    display: none;
+}
+
+span{
+    display: none;
+}
+.custom-card:hover h1{
+    display: block;
+}
+.custom-card:hover p{
+    display: block;
+}
+.custom-card:hover span{
+    display: block;
+}
+.custom-card:hover .hover-background{
+    height: 100%;
+}
+
+
+
+
 
 
 </style>

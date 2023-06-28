@@ -13,7 +13,7 @@ import { store } from '../store';
 
 <template>
 
-<div class="ct-container d-flex align-items-center justify-content-between px-5" >
+<div class="ct-container d-flex align-items-center justify-content-between px-5">
     <div class="image-div">
         <img src="../../public/boolflix-logo.png" alt="logo">
     </div>
@@ -24,19 +24,6 @@ import { store } from '../store';
         </button>
     </div>
 </div>
-
-
-    <!-- <div class="container"> 
-        <div class="row">
-            <div class="col-12">
-                <h1>Boolflix</h1>
-                <div>
-                    <input type="text" placeholder="search" v-model="store.searchMovies" @keyup.enter="$emit('search')" >
-                    <button class="btn" @click="$emit('search')">Cerca</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
 </template>
 
@@ -58,7 +45,8 @@ import { store } from '../store';
 
             img{
                 height: 100%;
-                width: 50%;
+                width: 60%;
+                margin-top: 8px;
                 object-fit: contain;
             }
         }
