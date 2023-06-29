@@ -33,8 +33,10 @@ import { store } from '../store';
             <p>{{ MyMovies.original_name }} {{ MyMovies.original_title }}</p>
             <div><img class="flag" :src="'../../node_modules/country-flag-icons/flags/1x1/' + MyMovies.original_language.toUpperCase() + '.svg'" alt="IMMAGINE NON TROVATA"></div>
             <p>{{ MyMovies.overview }}</p>
-            <span v-for="rating in obtainRating()" :key="rating"><i class="fa-solid fa-star" style="color: #FFAB00;"></i></span>
-            <span v-for="empty_stars in obtainEmptyStars()" :key="empty_stars"><i class="fa-solid fa-star" style="color: white;"></i></span>
+            <div class="d-flex flex-wrap">
+                <span v-for="rating in obtainRating()" :key="rating"><i class="fa-solid fa-star" style="color: #FFAB00;"></i></span>
+                <span v-for="empty_stars in obtainEmptyStars()" :key="empty_stars"><i class="fa-solid fa-star" style="color: white;"></i></span>
+            </div>
         </div>
     </div>
 
